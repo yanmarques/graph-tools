@@ -1,0 +1,40 @@
+{
+    "name": "ae26e524dc0d",
+    "is_oriented": true,
+    "is_weighted": true,
+    "vertices": [
+        "a",
+        "b",
+        "c"
+    ],
+    "edges": [
+        {
+            "pair": [
+                "a",
+                "b"
+            ],
+            "value": 1
+        },
+        {
+            "pair": [
+                "b",
+                "c"
+            ],
+            "value": 4
+        },
+        {
+            "pair": [
+                "c",
+                "a"
+            ],
+            "value": 1
+        },
+        {
+            "pair": [
+                "c",
+                "b"
+            ],
+            "value": 2
+        }
+    ]
+}
