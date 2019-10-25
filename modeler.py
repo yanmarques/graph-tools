@@ -43,7 +43,7 @@ def mount_graph():
 
 
 def create_graph_from_interaction():
-    show_banner('Keep pressing enter fallbacks to defaults!')
+    show_banner('Keep pressing ENTER fallbacks to defaults!')
     print("\nCreate graph>")
 
     def prompt_forever(message, return_value):
