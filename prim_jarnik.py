@@ -1,7 +1,7 @@
 import math
 import logger
 import modeler
-from repr_types import adjacent_list, adjacent_matrix
+from repr_types import adjacent_list, adjacent_matrix, find_edge
 from util import show_banner, display_table
 from dijkstra import load_vertice_items
 from kruskal import spanning_tree_graph
@@ -16,13 +16,6 @@ def main():
     printer = map(_logger.info, min_spanning_tree(graph))
     show_banner('Results from Prim-Jarnik algo')
     list(printer)
-
-
-def find_edge(graph, pair):
-    for edge in graph.edges:
-        if set(edge.pair) == set(pair):
-            return edge
-    raise RuntimeError(f'Edge not found with pair [{pair}]')
 
 
 def min_spanning_tree(graph):
@@ -51,7 +44,8 @@ def min_spanning_tree(graph):
         queue.sort(key=lambda k: all_items[k].metric, reverse=True)
         if curr_item.path is not None:
             adj_vertice = curr_item.path
-            yield find_edge(graph, (curr_vertice, adj_vertice))
+            yield find_edge((curr_vertice, adj_vertice), graph.edges)
+
 
 if __name__ == '__main__':
     main()

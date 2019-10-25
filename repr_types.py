@@ -118,7 +118,7 @@ def maybe_remove_duplicate_edges(graph: Graph):
 
     new_edges = []
     for edge in graph.edges:
-        if not _has_adjacent_edge(edge, new_edges):
+        if find_edge(edge.pair, new_edges) is None:
             new_edges.append(edge)
 
     graph.edges = new_edges
@@ -135,24 +135,18 @@ def structured_matrix(line_size, column_size=None, padding=0):
     return [[padding for _ in column_sequence] for i in line_sequence]
 
 
-def _has_adjacent_edge(target: Edge, edge_list):
-    pair = target.pair[:2]
-    for index, edge in enumerate(edge_list):
-        if edge.pair[:2] == pair:
-            return True
-
-        # reverse the duplicate edge order
-        reversed_edge = edge.clone()
-        reversed_edge.pair = edge.pair[-1::-1]
-        if reversed_edge.pair[:2] == pair:
-            return True
-    return False
+def find_edge(target_pair, edge_list):
+    pair = set(target_pair)
+    for edge in edge_list:
+        if pair == set(edge.pair):
+            return edge
+    return None
 
 
 def _get_list_index(target: Edge, pair_list, default=-1):
-    pair = target.pair[:2]
+    pair = set(target.pair)
     for index, edge in enumerate(pair_list):
-        if edge[:2] == pair:
+        if pair == set(edge):
             return index
     return default
 
