@@ -1,0 +1,233 @@
+[
+    {
+        "road_name": "A-E",
+        "trafficable": 1.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 62.5
+    },
+    {
+        "road_name": "B-A",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "B-C",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "C-A",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 1.0,
+        "weight": 78.75
+    },
+    {
+        "road_name": "D-B",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "D-C",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "D-H",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "D-G",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "E-A",
+        "trafficable": 1.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 62.5
+    },
+    {
+        "road_name": "E-I",
+        "trafficable": 1.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 62.5
+    },
+    {
+        "road_name": "E-F",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "F-E",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "F-B",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "F-H",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "G-D",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "G-C",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "G-H",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "H-F",
+        "trafficable": 0.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 0.0
+    },
+    {
+        "road_name": "H-D",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "H-G",
+        "trafficable": 0.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 15.625
+    },
+    {
+        "road_name": "I-E",
+        "trafficable": 1.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 62.5
+    },
+    {
+        "road_name": "I-J",
+        "trafficable": 1.0,
+        "condition": 0.5,
+        "pitstop_condition": 0.0,
+        "weight": 70.3125
+    },
+    {
+        "road_name": "J-I",
+        "trafficable": 1.0,
+        "condition": 0.5,
+        "pitstop_condition": 0.0,
+        "weight": 70.3125
+    },
+    {
+        "road_name": "J-F",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "J-K",
+        "trafficable": 1.0,
+        "condition": 0.5,
+        "pitstop_condition": 0.0,
+        "weight": 70.3125
+    },
+    {
+        "road_name": "K-J",
+        "trafficable": 1.0,
+        "condition": 0.5,
+        "pitstop_condition": 0.0,
+        "weight": 70.3125
+    },
+    {
+        "road_name": "K-G",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "test",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 1.0,
+        "weight": 78.75
+    },
+    {
+        "road_name": "7b37ae5503be",
+        "trafficable": 1.0,
+        "condition": 1.0,
+        "pitstop_condition": 0.0,
+        "weight": 78.125
+    },
+    {
+        "road_name": "364fe0479cf3",
+        "trafficable": 0.0,
+        "condition": 0.0,
+        "pitstop_condition": 1.0,
+        "weight": 0.625
+    },
+    {
+        "road_name": "96855044e48c",
+        "trafficable": 1.0,
+        "condition": 0.0,
+        "pitstop_condition": 1.0,
+        "weight": 63.125
+    },
+    {
+        "road_name": "4aede5f9c7bd",
+        "trafficable": 1.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 62.5
+    },
+    {
+        "road_name": "B-D",
+        "trafficable": 0.0,
+        "condition": 0.0,
+        "pitstop_condition": 0.0,
+        "weight": 0.0
+    }
+]

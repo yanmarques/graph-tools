@@ -42,7 +42,7 @@ def adjacent_matrix(graph: Graph):
 
         if graph.is_weighted:   # change value if highest
             current_weight = matrix[line_index][column_index]
-            if edge.value > current_weight:
+            if edge.value < current_weight:
                 matrix[line_index][column_index] = edge.value
                 if not graph.is_oriented:
                     matrix[column_index][line_index] = edge.value

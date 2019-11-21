@@ -130,4 +130,5 @@ def parse_arguments():
         graph = create_graph_from_interaction()
         _logger.info('saving graph to file at: %s', args.graph_directory)
         dump_graph(graph, directory=args.graph_directory)
+    dump_graph(graph, directory=args.graph_directory)
     return graph

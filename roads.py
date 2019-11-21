@@ -22,16 +22,18 @@ class RoadAttributes:
     weight: float = None
 
     default_weights = {
-        'trafficable': 20,
-        'condition': 10,
-        'pitstop_condition': 5
+        'trafficable': 100,
+        'condition': 50,
+        'pitstop_condition': 10
     }
 
     def __post_init__(self):
         first_op = 0
         for param in self.default_weights.keys():
             value = getattr(self, param)
-            first_op += value * self.default_weights[param]
+            local_weight = self.default_weights[param]
+            real_value = value * local_weight
+            first_op += real_value * local_weight
         self.weight = first_op / sum(self.default_weights.values())
 
 
