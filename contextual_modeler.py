@@ -16,8 +16,8 @@ def with_vertice(message, throlling_message=None, one_transaction=True):
             context.graph = upsert_vertice(context.graph, vertice)
             return fn(context, vertice)
 
-        def runner(**kwargs):
-            next_context = TransactionContext(**kwargs)
+        def runner(context=None, **kwargs):
+            next_context = context or TransactionContext(**kwargs)
             reader_predicate = text_reader(message=message,
                                            max_attempts=1,
                                            throlling_message=throlling_message)

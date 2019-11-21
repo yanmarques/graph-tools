@@ -7,7 +7,7 @@ import os
 import logger
 from contextual_modeler import model_graph_vertices
 from data_structures import Graph, Edge
-from util import read_text, read_choices, display_table, show_banner
+from util import read_text, read_choices, display_table, show_banner, prompt_forever
 from repr_types import maybe_remove_duplicate_edges, is_graph
 
 
@@ -42,27 +42,20 @@ def mount_graph():
                  is_weighted=graph_weight == 1)
 
 
+def get_graph_modeler(graph):
+    def wrapper():
+        context = model_graph_vertices(graph=graph)
+        return context.graph
+
+
 def create_graph_from_interaction():
     show_banner('Keep pressing ENTER fallbacks to defaults!')
     print("\nCreate graph>")
 
-    def prompt_forever(message, return_value):
-        binary_choices = ['yes', 'no']
-        can_continue = False
-        while not can_continue:
-            value = return_value()
-            print(value)
-            choice = read_choices(message, binary_choices,
-                            throlling_message='Assuming everything is ok...')
-            can_continue = choice == 0
-        return value
-
     graph = prompt_forever('This info sounds good til now?', mount_graph)
     _logger.info('graph created: %s', graph)
 
-    def modeler():
-        context = model_graph_vertices(graph=graph)
-        return context.graph
+    modeler = get_graph_modeler(graph)
 
     while True:
         graph = prompt_forever('New info sounds good?', modeler)
@@ -79,9 +72,14 @@ def create_graph_from_interaction():
     return maybe_remove_duplicate_edges(graph)
 
 
-def dumps(graph, directory=''):
-    dict_repr = asdict(graph)
+def dump_graph(graph, directory=''):
     filename = f'{graph.name}.json'
+    dump_class(filename, graph, directory=directory)
+    _logger.debug(f'graph was written to: {filename}')
+
+
+def dump_class(filename, data_class, dict_impl=asdict, directory=''):
+    dict_repr = dict_impl(data_class)
 
     # handle a target directory
     if directory:
@@ -91,7 +89,6 @@ def dumps(graph, directory=''):
 
     with open(filename, 'w') as writer:
         writer.write(json.dumps(dict_repr, indent=4))
-    _logger.debug(f'graph was written to: {filename}')
 
 
 def read_graph(io_wrapper):
@@ -132,5 +129,5 @@ def parse_arguments():
     else:
         graph = create_graph_from_interaction()
         _logger.info('saving graph to file at: %s', args.graph_directory)
-        dumps(graph, directory=args.graph_directory)
+        dump_graph(graph, directory=args.graph_directory)
     return graph

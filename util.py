@@ -35,17 +35,28 @@ def read_text(message,
             if remaining_attempts >= 0:
                 return read_text(message,
                                  max_attempts=remaining_attempts,
+                                 default=default,
                                  validation=validation,
                                  throlling_message=throlling_message)
-    return text or default
+    if text is None or text == '':
+        return default
+    return text
 
 
 def read_int(message, **kwargs):
+    return read_by_function(message, int, 'Value must be an integer.', **kwargs)
+
+
+def read_float(message, **kwargs):
+    return read_by_function(message, float, 'Value must be a number.', **kwargs)
+
+
+def read_by_function(message, convert_function, validation_msg, **kwargs):
     def validator(text):
         try:
-            return int(text)
+            return convert_function(text)
         except ValueError:
-            raise ValidationException('Value must be an integer.')
+            raise ValidationException(validation_msg)
 
     return read_text(message, validation=validator, **kwargs)
 
@@ -64,6 +75,18 @@ def read_choices(message, choices, default=0, **kwargs):
                      validation=chooser,
                      default=default,
                      **kwargs)
+
+
+def prompt_forever(message, return_value):
+    binary_choices = ['yes', 'no']
+    can_continue = False
+    while not can_continue:
+        value = return_value()
+        print(value)
+        choice = read_choices(message, binary_choices,
+                        throlling_message='Assuming everything is ok...')
+        can_continue = choice == 0
+    return value
 
 
 def show_banner(text, separator='#'):
